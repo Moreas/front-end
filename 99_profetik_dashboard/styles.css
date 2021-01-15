@@ -1,0 +1,211 @@
+:root {
+    --main-dark: #313854;
+    --main-extra-light: rgba(0, 0, 0, 0.1);
+    --main-dark-blue: rgba(0, 0, 51, 0.7);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: white;
+    background-color:var(--main-dark);
+}
+aside img{
+    padding: 35px 25px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: 
+    "sidenav header"
+    "sidenav main"
+    "sidenav footer";
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    align-items : center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.sidenav {
+    grid-area: sidenav;
+    background-color: var(--main-dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav__list {
+    padding: 0;
+    margin-top: 85px;
+    list-style-type: none;
+}
+
+.sidenav__list-item {
+    padding: 20px 20px 20px 40px;
+    color: #ddd;
+}
+
+.sidenav__list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.down-carret {
+    margin-left: 10px;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-width:2px 0px 0px 2px;
+    border-color: gray;
+    display: inline-block;
+    transform: rotate(135deg);
+    transition: 200ms;
+}
+
+.active.sidenav__list-item{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.active .down-carret {
+    margin-left: 10px;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-width:2px 0px 0px 2px;
+    display: inline-block;
+    transform: rotate(225deg);
+    transition: 200ms;
+}
+
+aside ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sub-menu {
+    display: none;
+}
+.active .sub-menu {
+    display: block;
+    margin: 0;
+}
+
+
+.submenu-item {
+    text-align: right;
+    padding: 20px 50px 5px 0px;
+    list-style-type: none;
+    font-size: 14px;
+    margin: 0px;
+    color: #ccc;
+}
+
+.submenu-item a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.submenu-item a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.main {
+    grid-area: main;
+    background-color: white;
+    border-radius: 0 0 0 15px;
+}
+
+.main-header {
+    height: 180px; /* Force our height since we don't have content yet */
+    border-bottom: solid 5px #DBAC43;
+}
+
+.main-header-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+}
+
+.main-header__heading {
+    font-size: 30px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* where the magic happens */
+    grid-auto-rows: 94px;
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--main-dark-blue);
+    box-shadow: 2px 4px 5px rgba(0, 0, 51, 0.4);
+    border-radius: 5px;
+}
+
+.main-cards {
+    column-count: 2;
+    column-gap: 20px;
+    margin: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-dark-blue);
+    margin-bottom: 20px;
+    -webkit-column-break-inside: avoid;
+    padding: 24px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 5px rgba(0, 0, 51, 0.4);
+    border-radius: 5px;
+}
+
+.card:first-child {
+    height: 485px;
+}
+
+.card:nth-child(2) {
+    height: 200px;
+}
+
+.card:nth-child(3) {
+    height: 264px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--main-dark);
+    display: flex;
+    align-items : center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
